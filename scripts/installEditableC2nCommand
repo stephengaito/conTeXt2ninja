@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# This bash script uses the current working directory to create a simple
+# script to run the c2n command anywhere in a user's workspace.
+
+cmdScript=$(pwd)/.venv/bin/c2n
+
+cat << CMD_SCRIPT > $HOME/.local/bin/c2n
+#!/bin/sh
+
+# This shell script was created by the ConTeXt2ninja tool
+#       './scripts/installEditableC2nCommand'
+# script.
+
+exec $cmdScript \$@
+CMD_SCRIPT
+
+chmod a+x $HOME/.local/bin/c2n
+
+echo ""
+echo "Editable c2n command has been created"
+echo ""

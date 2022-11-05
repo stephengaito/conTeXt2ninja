@@ -1,0 +1,22 @@
+[project]
+name = "conTeXt2ninja"
+version = "0.0.1"
+description = "A literateProgrammingInConTeXt companion project which generates an associated ninja.build file"
+authors = [
+    {name = "Stephen Gaito", email = "stephen@perceptisys.co.uk"},
+]
+dependencies = [
+    "aiofiles>=22.1.0",
+]
+requires-python = ">=3.10"
+license = {text = "Apache2.0"}
+
+[project.scripts]
+c2n = "c2n:cli.cli"
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
+
+[tool]
+[tool.pdm]
